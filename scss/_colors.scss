@@ -1,0 +1,93 @@
+//COLOR PALETTE
+
+$color-1: #000000; // black
+$color-2: #082d52; // Dark Blue
+$color-3: #b13df5; // pale purple
+$color-4: #ffffff; // white
+$color-5: #ffec70; // light yellow
+$opacify-blue: rgba(8, 45 , 82, .6);
+
+
+body {
+  background-color: $color-5; 
+  background: linear-gradient(0deg, $color-5 0%, $color-3 33%, $color-2 66%, $color-1 100%);
+}
+
+header {
+  background-color: $color-1;
+  background: linear-gradient(0deg, $color-2 0%, $color-1 100%);
+  box-shadow: 0px 100px 50px $color-2;
+
+  @media only screen and (min-width: $width-L) {
+    background-color: $color-1;
+    background: linear-gradient(0deg, $color-2 0%, $color-2 18%, $color-1 100%);
+    box-shadow: 0px 100px 50px $color-2;
+  }
+}
+
+
+div.summary {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+aside.sidebar::before {
+  background-color: $color-1;
+  background: linear-gradient(0deg, $color-2 0%, $color-1 100%);
+  box-shadow: 0px 150px 50px $color-2;
+}
+
+aside.sidebar {
+  background-color: $color-1;
+  background:  linear-gradient(0deg, $color-2 0%, $color-3 66%, transparent 100%);
+  
+  div {
+    color: $color-5;
+  }
+
+  h3 {
+    color: $color-4;
+  }
+
+  .design-name {
+    color: $color-5;
+  }
+  
+  .designer-name {
+    color: $color-4;
+  }
+
+  @media only screen and (min-width: $width-L) {
+    background:  linear-gradient(0deg, $color-3 0%, $color-2 50%, $color-1 100%);
+    
+    .designer-name {
+      color: $color-3;
+    }
+  
+  }
+}
+
+[role=article] {
+    color: $color-4;
+    background-color: $opacify-blue;
+    box-shadow: 0px 0px 10px $color-4; 
+}
+
+
+
+
+h1 {
+    color: $color-4;
+}
+
+h2, h3 {  
+  color: $color-5;
+}
+
+a {
+  color: $color-5;
+}
+
+footer a {
+  color: $color-4;
+}

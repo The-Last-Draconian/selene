@@ -1,0 +1,542 @@
+//Mixins
+
+@mixin star {
+    content: '';
+    display: block;
+    position: absolute;
+    background: $color-4;
+    width: 5px;
+    height: 5px;
+    transform: rotate(50deg) skewX(20deg);
+}
+
+@mixin t-r ($top, $right) {
+    top: $top;
+    right: $right;
+}
+
+@mixin t-l ($top, $left) {
+    top: $top;
+    left: $left;
+}
+
+@mixin b-r ($bottom, $right) {
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin b-l ($bottom, $left) {
+    bottom: $bottom;
+    left: $left;
+}
+
+
+
+//Shapes
+
+
+.intro {
+
+    //container
+    header {
+        position: relative;
+        overflow: hidden;
+    }
+
+    //shape
+    header::before {
+        content: url(../assets/logo-M.jpg);
+        position: absolute;
+        top: 0px;
+        right: 20%;
+        background: linear-gradient(0deg, $color-1 0%, $color-4 100%);
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        z-index: -1;
+    }
+
+    @media only screen and (min-width: $width-M) {
+        header::before {
+            right: 30%;
+        }
+    }
+
+    @media only screen and (min-width: $width-L) {
+        header::before {
+            content: url(../assets/logo-L.jpg);
+            width: 500px;
+            height: 500px;
+            top: -50px;
+            right: 33%;
+            margin: 0;
+        }
+    }
+
+    h1, h2 {
+        z-index: 1;
+    }
+
+}
+
+
+  //containers
+h1, 
+h2, 
+h3, 
+p, 
+aside.sidebar {
+    position: relative;
+}
+
+//shapes
+h1::before, 
+h1::after, 
+h2::before, 
+h2::after, 
+h3::before, 
+h3::after,
+p::before,
+p::after,
+.design-archives li::before,
+.design-archives li::after,
+.zen-resources li::before,
+.zen-resources li::after {
+    @include star;
+    display: none;
+}
+
+.main.supporting h3 {
+    width: 100%;
+}
+
+//positioning
+
+@media only screen and (min-width: $width-M) {
+    //visibility
+    .intro {
+        h1::before, 
+        h1::after, 
+        h2::before, 
+        h2::after,
+        h3::before, 
+        h3::after {
+            display: block;
+        }
+        
+        //positioning
+        header {
+            h1::before {
+                @include t-r(0px, 20%);
+            }
+        
+            h1::after {
+                @include t-r(60px, 13%);
+            }
+            
+            h2::before {
+                @include b-r(0px, 20%);
+            }
+
+            h2::after {
+                @include b-l(90px, 20%);
+            }
+        }
+
+        .preamble {
+            h3::before {
+                @include b-l(120px, 10%);
+            }
+
+            h3::after {
+                @include b-l(150px, -8%);
+            }
+        }
+    }
+
+
+    //visibility
+    .design-archives li::before,
+    .design-archives li::after,
+    .zen-resources li::before,
+    .zen-resources li::after {
+        display: block;
+    }
+
+    //positioning
+    aside.sidebar {
+        .design-archives {
+
+            li:nth-of-type(1)::before {
+                @include t-l(22%, 28%);
+            }
+
+            li:nth-of-type(1)::after {
+                @include t-l(45%, 82%);
+            }
+
+            li:nth-of-type(2)::before {
+                @include t-l(38%, 22%);
+            }
+
+            li:nth-of-type(2)::after {
+                @include t-l(50%, 70%);
+            }
+        }
+
+        .zen-resources {
+
+            li:nth-of-type(1)::before {
+                @include t-l(45%, 28%);
+            }
+
+            li:nth-of-type(1)::after {
+                @include t-l(68%, 86%);
+            }
+
+            li:nth-of-type(2)::before {
+                @include t-l(63%, 10%);
+            }
+
+            li:nth-of-type(2)::after {
+                @include t-l(65%, 65%);
+            }
+
+            li:nth-of-type(3)::before {
+                @include t-l(76%, 24%);
+            }
+
+            li:nth-of-type(3)::after {
+                @include t-l(75%, 90%);
+            }
+
+            li:nth-of-type(4)::before {
+                @include t-l(80%, 30%);
+            }
+
+            li:nth-of-type(4)::after {
+                @include t-l(83%, 70%);
+            }
+
+            li:nth-of-type(5)::before {
+                @include t-l(95%, 18%);
+            }
+
+            li:nth-of-type(5)::after {
+                @include t-l(90%, 80%);
+            }
+        }
+    }
+
+}
+
+
+
+@media only screen and (min-width: $width-L) {
+    //visibility
+        h1::before, 
+        h1::after, 
+        h2::before, 
+        h2::after, 
+        h3::before, 
+        h3::after,
+        p::before,
+        p::after {
+            display: block;
+    }
+
+    .intro {
+        header {
+            h1::before {
+                @include t-r(10px, 20%);
+            }
+        
+            h1::after {
+                @include t-r(-20px, 5%);
+            }
+            
+            h2::before {
+                @include b-r(50px, 10%);
+            }
+
+            h2::after {
+                @include b-l(70px, 0px);
+            }
+        }
+        
+        .summary {
+            p:first-of-type::before {
+                @include b-l (100px, -10%);
+            } 
+
+            p:first-of-type::after {
+                @include b-l(50px, -20%);
+            }
+            
+            p:nth-of-type(2)::before {
+                @include b-l(15em, -15%);
+            }
+            
+            p:nth-of-type(2)::after {
+                @include b-l(10px, -29%);
+            }
+        }
+
+        .preamble {
+            h3::before {
+                @include b-l(100px, -10%);
+            }
+
+            h3::after {
+                @include b-l(30px, -5%);
+            }
+
+            p:first-of-type::before {
+                @include t-l(40px, -90px);
+            } 
+
+            p:first-of-type::after {
+                @include t-l(70px, -70px);
+            }
+            
+            p:nth-of-type(2)::before {
+                @include t-l(50px, -10%);
+            }
+            
+            p:nth-of-type(2)::after {
+                @include t-l(250px, -15%);
+            }
+
+            p:nth-of-type(3)::before {
+                @include t-l(250px, -10%);
+            }
+            
+            p:nth-of-type(3)::after {
+                @include t-l(270px, -15%);
+            }
+        }   
+    }
+
+    .main.supporting {
+        h3 {
+            width: 67%;
+        }
+
+        div.explanation {
+            h3::before {
+                @include t-r(0px, -75%);
+            }
+
+            h3::after {
+                @include t-r(30px, -60%);
+            }
+
+            p:first-of-type::before {
+                @include t-r(40px, -23%);
+            } 
+
+            p:first-of-type::after {
+                @include t-r(100px, -40%);
+            }
+            
+            p:nth-of-type(2)::before {
+                @include t-r(20px, -37%);
+            }
+            
+            p:nth-of-type(2)::after {
+                @include t-r(100px, -30%);
+            }
+        }
+
+        div.participation {
+            h3::before {
+                @include t-l(0px, -200px);
+            }
+
+            h3::after {
+                @include t-l(30px, -100px);
+            }
+
+            p:first-of-type::before {
+                @include t-l(40px, -23%);
+            } 
+
+            p:first-of-type::after {
+                @include t-l(100px, -40%);
+            }
+            
+            p:nth-of-type(2)::before {
+                @include t-l(20px, -37%);
+            }
+            
+            p:nth-of-type(2)::after {
+                @include t-l(100px, -30%);
+            }
+
+            p:nth-of-type(3)::before {
+                @include t-l(0px, -10%);
+            }
+
+            p:nth-of-type(3)::after {
+                @include t-l(100px, -20%);
+            }
+        }
+
+        div.benefits {
+            h3::before {
+                @include t-r(0px, -100%);
+            }
+
+            h3::after {
+                @include t-r(30px, -85%);
+            }
+
+            p:first-of-type::before {
+                @include t-r(40px, -30%);
+            } 
+
+            p:first-of-type::after {
+                @include t-r(100px, -20%);
+            }
+        }
+
+        div.requirements {
+            h3::before {
+                @include t-l(0px, -200px);
+            }
+
+            h3::after {
+                @include t-l(30px, -100px);
+            }
+
+            p:first-of-type::before {
+                @include t-l(40px, -23%);
+            } 
+
+            p:first-of-type::after {
+                @include t-l(100px, -40%);
+            }
+            
+            p:nth-of-type(2)::before {
+                @include t-l(20px, -37%);
+            }
+            
+            p:nth-of-type(2)::after {
+                @include t-l(100px, -30%);
+            }
+
+            p:nth-of-type(3)::before {
+                @include t-l(0px, -10%);
+            }
+
+            p:nth-of-type(3)::after {
+                @include t-l(100px, -25%);
+            }
+
+            p:nth-of-type(4)::before {
+                @include t-l(0px, -29%);
+            }
+
+            p:nth-of-type(4)::after {
+                @include t-l(100px, -20%);
+            }
+
+            p:nth-of-type(5)::before {
+                @include t-l(0px, -40%);
+            }
+
+            p:nth-of-type(5)::after {
+                @include t-l(100px, -20%);
+            }
+        }
+    }
+
+    aside.sidebar {
+        .design-selection {
+            h3::before {
+                @include t-l (-230px, 0px);
+            }
+
+            h3::after {
+                @include t-l (-100px, -10px);
+            }
+
+        }
+
+        .design-archives {
+            h3::before {
+                @include t-l(100px, 48%);
+            }
+
+            h3::after {
+                @include t-l(150px, 70%);
+            }
+
+            li:nth-of-type(1)::before {
+                @include t-l(50%, 30%);
+            }
+
+            li:nth-of-type(1)::after {
+                @include t-l(53%, 83%);
+            }
+
+            li:nth-of-type(2)::before {
+                @include t-l(55%, 70%);
+            }
+
+            li:nth-of-type(2)::after {
+                @include t-l(60%, 63%);
+            }
+        }
+
+        .zen-resources {
+            h3::before {
+                @include t-l(30px, 83%);
+            }
+
+            h3::after {
+                @include t-l(100px, 70%);
+            }
+
+            li:nth-of-type(1)::before {
+                @include t-l(65%, 30%);
+            }
+
+            li:nth-of-type(1)::after {
+                @include t-l(68%, 60%);
+            }
+
+            li:nth-of-type(2)::before {
+                @include t-l(70%, 75%);
+            }
+
+            li:nth-of-type(2)::after {
+                @include t-l(75%, 34%);
+            }
+
+            li:nth-of-type(3)::before {
+                @include t-l(78%, 48%);
+            }
+
+            li:nth-of-type(3)::after {
+                @include t-l(80%, 32%);
+            }
+
+            li:nth-of-type(4)::before {
+                @include t-l(85%, 75%);
+            }
+
+            li:nth-of-type(4)::after {
+                @include t-l(88%, 45%);
+            }
+
+            li:nth-of-type(5)::before {
+                @include t-l(90%, 60%);
+            }
+
+            li:nth-of-type(5)::after {
+                @include t-l(95%, 30%);
+            }
+        }
+    }
+}

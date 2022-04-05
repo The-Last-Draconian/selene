@@ -1,0 +1,279 @@
+//Animations
+
+@keyframes star-1 {
+    0% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-3;
+    }
+    30% {
+        transform: scale(120%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 13px $color-3;
+    }
+    60% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-3;
+    }
+    61% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-3;
+    }
+    80% {
+        transform: scale(100%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 10px $color-3;
+    }
+    100% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-3;
+    }
+}
+
+@keyframes star-2 {
+    0% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-5;
+    }
+    25% {
+        transform: scale(70%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-5;
+    }
+    50% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-5;
+    }
+    75% {
+        transform: scale(70%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-5;
+    }
+    100% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-5;
+    }
+}
+
+@keyframes star-3 {
+    0% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-3;
+    }
+    20% {
+        transform: scale(50%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 5px $color-3;
+    }
+    30% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-3;
+    }
+    40% {
+        transform: scale(70%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-3;
+    }
+    50% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-4;
+    }
+    58% {
+        transform: scale(60%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-4;
+    }
+    66% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-4;
+    }
+    74% {
+        transform: scale(60%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-4;
+    }
+    82% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 3px $color-4;
+    }
+    90% {
+        transform: scale(60%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-4;
+    }
+    98% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-4;
+    }
+    100% {
+        transform: scale(0%) rotate(50deg) skewX(20deg);
+        box-shadow: 0px 0px 0px $color-4;
+    }
+
+
+}
+
+@keyframes moon {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    62% {
+        transform: translateY(0%);
+    }
+    75% {
+        transform: translateY(1%);
+    }
+    100% {
+        transform: translateY(0%);
+    } 
+}
+
+//mixins
+
+@mixin twinkle($delay) {
+    animation-name: star-1;
+    animation-delay: $delay;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@mixin pulse($delay) {
+    animation-name: star-2;
+    animation-delay: $delay;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@mixin blink($delay) {
+    animation-name: star-3;
+    animation-delay: $delay;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@mixin moonrise {
+    animation-name: moon;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.07,.36,.59,1.07);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+//variables
+$delay-1: 0s;
+$delay-2: .3s;
+$delay-3: .5s;
+
+//moon
+header::before {
+    @include moonrise;
+}
+
+@media only screen and (min-width: $width-L) {
+    header::before {
+        @include moonrise;
+    }
+}
+
+
+//stars
+@media only screen and (prefers-reduced-motion: no-preference) {
+    .intro {
+        header {
+            h1::before {
+                @include twinkle($delay-1);
+            }
+            
+            h1::after {
+                @include pulse($delay-2);
+            }
+        
+            h2::before, h2::after {
+                @include blink($delay-3);
+            }
+        }
+        
+        .summary {
+            p::before {
+                @include pulse($delay-1);
+            } 
+
+            p::after {
+                @include twinkle($delay-1);
+            }
+        }
+
+        .preamble {
+            h3::before {
+                @include pulse($delay-2);
+            }
+            
+            h3::after {
+                @include pulse($delay-1);
+            }
+
+            p::before {
+                @include twinkle($delay-3);
+            }
+
+            p::after {
+                @include blink($delay-1);
+            }
+        }   
+    }
+
+    .main.supporting {
+        h3::before {
+            @include twinkle($delay-1);
+        }
+        
+        h3::after {
+            @include twinkle($delay-3);
+        }
+
+        p:nth-of-type(even)::before {
+            @include pulse ($delay-2);
+        }
+
+        p:nth-of-type(even)::after {
+            @include pulse($delay-1);
+        }
+
+        p:nth-of-type(odd)::before {
+            @include blink($delay-2);
+        }
+
+        p:nth-of-type(odd)::after {
+            @include twinkle($delay-2);
+        }
+    }
+
+    aside.sidebar {
+        h3::before {
+            @include blink($delay-2);
+        }
+        
+        h3::after {
+            @include twinkle($delay-3);
+        }
+
+        li:nth-of-type(even)::before {
+            @include pulse ($delay-2);
+        }
+
+        li:nth-of-type(even)::after {
+            @include pulse($delay-1);
+        }
+
+        li:nth-of-type(odd)::before {
+            @include blink($delay-3);
+        }
+
+        li:nth-of-type(odd)::after {
+            @include twinkle($delay-1);
+        }
+    }
+
+}

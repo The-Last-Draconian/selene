@@ -1,0 +1,1241 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,400&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 2% 0;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+div {
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+[role=presentation] {
+  display: none;
+}
+
+/*Variables
+*/
+/*
+*
+*
+Small View Layout
+*
+*
+*/
+body {
+  max-width: 80%;
+  padding-bottom: 0px;
+}
+
+aside.sidebar {
+  display: block;
+}
+
+.intro {
+  width: 100%;
+  position: relative;
+}
+.intro header {
+  margin-left: -30%;
+  width: 160%;
+  height: 300px;
+  z-index: -1;
+}
+.intro h1 {
+  margin-top: 20px;
+}
+.intro div {
+  z-index: 0;
+}
+.intro div.summary {
+  position: absolute;
+  top: 15%;
+}
+.intro div.preamble {
+  margin-top: 0px;
+}
+
+.page-wrapper {
+  position: relative;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.main.supporting {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+
+aside.sidebar {
+  position: relative;
+  width: 140%;
+  margin-left: -20%;
+  padding-bottom: 70px;
+}
+aside.sidebar .wrapper {
+  margin-bottom: 0px;
+}
+
+[class=main] > div {
+  margin: 10px;
+  padding: 2% 2% 100px 2%;
+  text-align: left;
+}
+
+footer {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+}
+
+/*
+*
+*
+Medium View Layout
+*
+*
+*/
+@media only screen and (min-width: 500px) {
+  .intro header {
+    height: 350px;
+  }
+  .intro h1 {
+    margin-top: 50px;
+  }
+  .intro div.summary {
+    top: 25%;
+  }
+}
+/*
+*
+*
+Large View Layout
+*
+*
+*/
+@media only screen and (min-width: 980px) {
+  body {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 0px;
+  }
+  body h1, body h2, body h3 {
+    text-align: left;
+  }
+
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 700px 1fr;
+    grid-auto-flow: row;
+    gap: 0px;
+    padding-top: 0px;
+    margin-right: 2%;
+  }
+
+  .intro {
+    width: 100%;
+    grid-column: 2/5;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 150px 1fr;
+  }
+  .intro header {
+    width: 110%;
+    height: 260px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-top: 100px;
+    z-index: 0;
+    margin-left: 0px;
+  }
+  .intro h1 {
+    margin-top: 0px;
+    font-size: 3.4em;
+    margin-right: 10%;
+  }
+  .intro h2 {
+    margin: 1em auto;
+    margin-right: 10%;
+  }
+  .intro div {
+    margin-left: 5px;
+    z-index: 1;
+  }
+  .intro div.summary {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    top: -50px;
+    width: 100%;
+  }
+  .intro div.preamble {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin-top: -90px;
+  }
+
+  aside.sidebar {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    padding-top: 350px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    margin-left: -100px;
+    z-index: 0;
+    width: auto;
+  }
+  aside.sidebar div {
+    margin-left: 15%;
+    z-index: 1;
+  }
+  aside.sidebar .design-seection, aside.sidebar .design-selection h3 {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  aside.sidebar::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    width: 200%;
+    height: 300px;
+    z-index: -1;
+  }
+
+  .main.supporting {
+    grid-column: 2/5;
+    grid-row: 2/3;
+    margin-left: 50px;
+    z-index: 2;
+  }
+  .main.supporting div {
+    z-index: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 25%;
+  }
+  .main.supporting div:nth-child(even) {
+    margin-right: 0%;
+    margin-left: 25%;
+  }
+
+  footer {
+    width: auto;
+    bottom: 30px;
+    left: 0px;
+    padding: 0px 5%;
+  }
+}
+body {
+  background-color: #ffec70;
+  background: linear-gradient(0deg, #ffec70 0%, #b13df5 33%, #082d52 66%, #000000 100%);
+}
+
+header {
+  background-color: #000000;
+  background: linear-gradient(0deg, #082d52 0%, #000000 100%);
+  box-shadow: 0px 100px 50px #082d52;
+}
+@media only screen and (min-width: 980px) {
+  header {
+    background-color: #000000;
+    background: linear-gradient(0deg, #082d52 0%, #082d52 18%, #000000 100%);
+    box-shadow: 0px 100px 50px #082d52;
+  }
+}
+
+div.summary {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+aside.sidebar::before {
+  background-color: #000000;
+  background: linear-gradient(0deg, #082d52 0%, #000000 100%);
+  box-shadow: 0px 150px 50px #082d52;
+}
+
+aside.sidebar {
+  background-color: #000000;
+  background: linear-gradient(0deg, #082d52 0%, #b13df5 66%, transparent 100%);
+}
+aside.sidebar div {
+  color: #ffec70;
+}
+aside.sidebar h3 {
+  color: #ffffff;
+}
+aside.sidebar .design-name {
+  color: #ffec70;
+}
+aside.sidebar .designer-name {
+  color: #ffffff;
+}
+@media only screen and (min-width: 980px) {
+  aside.sidebar {
+    background: linear-gradient(0deg, #b13df5 0%, #082d52 50%, #000000 100%);
+  }
+  aside.sidebar .designer-name {
+    color: #b13df5;
+  }
+}
+
+[role=article] {
+  color: #ffffff;
+  background-color: rgba(8, 45, 82, 0.6);
+  box-shadow: 0px 0px 10px #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+h2, h3 {
+  color: #ffec70;
+}
+
+a {
+  color: #ffec70;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Arsenal", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: "EB Garamond", serif;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+
+p {
+  line-height: 2em;
+  text-align: center;
+  font-size: 2rem;
+}
+@media only screen and (min-width: 980px) {
+  p {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+}
+
+p + p {
+  padding-top: 15px;
+}
+
+button {
+  font-size: 1.4rem;
+  font-family: "EB Garamond", serif;
+}
+
+/*
+Specific styles
+*/
+.intro h1 {
+  font-size: 2.5em;
+}
+.intro h2 {
+  font-size: 2rem;
+}
+.intro div.summary {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+}
+.intro div.summary p {
+  padding-top: 0px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+@media only screen and (min-width: 500px) {
+  .intro h1 {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .intro h1 {
+    font-size: 3.4em;
+    text-align: center;
+  }
+  .intro h2 {
+    text-align: center;
+  }
+}
+
+aside.sidebar {
+  font-size: 2rem;
+  text-align: center;
+}
+@media only screen and (min-width: 980px) {
+  aside.sidebar {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+aside.sidebar li {
+  line-height: 2em;
+}
+
+footer {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.intro header {
+  position: relative;
+  overflow: hidden;
+}
+.intro header::before {
+  content: url(../assets/logo-M.jpg);
+  position: absolute;
+  top: 0px;
+  right: 20%;
+  background: linear-gradient(0deg, #000000 0%, #ffffff 100%);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+}
+@media only screen and (min-width: 500px) {
+  .intro header::before {
+    right: 30%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .intro header::before {
+    content: url(../assets/logo-L.jpg);
+    width: 500px;
+    height: 500px;
+    top: -50px;
+    right: 33%;
+    margin: 0;
+  }
+}
+.intro h1, .intro h2 {
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+p,
+aside.sidebar {
+  position: relative;
+}
+
+h1::before,
+h1::after,
+h2::before,
+h2::after,
+h3::before,
+h3::after,
+p::before,
+p::after,
+.design-archives li::before,
+.design-archives li::after,
+.zen-resources li::before,
+.zen-resources li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  width: 5px;
+  height: 5px;
+  transform: rotate(50deg) skewX(20deg);
+  display: none;
+}
+
+.main.supporting h3 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 500px) {
+  .intro h1::before,
+.intro h1::after,
+.intro h2::before,
+.intro h2::after,
+.intro h3::before,
+.intro h3::after {
+    display: block;
+  }
+  .intro header h1::before {
+    top: 0px;
+    right: 20%;
+  }
+  .intro header h1::after {
+    top: 60px;
+    right: 13%;
+  }
+  .intro header h2::before {
+    bottom: 0px;
+    right: 20%;
+  }
+  .intro header h2::after {
+    bottom: 90px;
+    left: 20%;
+  }
+  .intro .preamble h3::before {
+    bottom: 120px;
+    left: 10%;
+  }
+  .intro .preamble h3::after {
+    bottom: 150px;
+    left: -8%;
+  }
+
+  .design-archives li::before,
+.design-archives li::after,
+.zen-resources li::before,
+.zen-resources li::after {
+    display: block;
+  }
+
+  aside.sidebar .design-archives li:nth-of-type(1)::before {
+    top: 22%;
+    left: 28%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(1)::after {
+    top: 45%;
+    left: 82%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(2)::before {
+    top: 38%;
+    left: 22%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(2)::after {
+    top: 50%;
+    left: 70%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(1)::before {
+    top: 45%;
+    left: 28%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(1)::after {
+    top: 68%;
+    left: 86%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(2)::before {
+    top: 63%;
+    left: 10%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(2)::after {
+    top: 65%;
+    left: 65%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(3)::before {
+    top: 76%;
+    left: 24%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(3)::after {
+    top: 75%;
+    left: 90%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(4)::before {
+    top: 80%;
+    left: 30%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(4)::after {
+    top: 83%;
+    left: 70%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(5)::before {
+    top: 95%;
+    left: 18%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(5)::after {
+    top: 90%;
+    left: 80%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  h1::before,
+h1::after,
+h2::before,
+h2::after,
+h3::before,
+h3::after,
+p::before,
+p::after {
+    display: block;
+  }
+
+  .intro header h1::before {
+    top: 10px;
+    right: 20%;
+  }
+  .intro header h1::after {
+    top: -20px;
+    right: 5%;
+  }
+  .intro header h2::before {
+    bottom: 50px;
+    right: 10%;
+  }
+  .intro header h2::after {
+    bottom: 70px;
+    left: 0px;
+  }
+  .intro .summary p:first-of-type::before {
+    bottom: 100px;
+    left: -10%;
+  }
+  .intro .summary p:first-of-type::after {
+    bottom: 50px;
+    left: -20%;
+  }
+  .intro .summary p:nth-of-type(2)::before {
+    bottom: 15em;
+    left: -15%;
+  }
+  .intro .summary p:nth-of-type(2)::after {
+    bottom: 10px;
+    left: -29%;
+  }
+  .intro .preamble h3::before {
+    bottom: 100px;
+    left: -10%;
+  }
+  .intro .preamble h3::after {
+    bottom: 30px;
+    left: -5%;
+  }
+  .intro .preamble p:first-of-type::before {
+    top: 40px;
+    left: -90px;
+  }
+  .intro .preamble p:first-of-type::after {
+    top: 70px;
+    left: -70px;
+  }
+  .intro .preamble p:nth-of-type(2)::before {
+    top: 50px;
+    left: -10%;
+  }
+  .intro .preamble p:nth-of-type(2)::after {
+    top: 250px;
+    left: -15%;
+  }
+  .intro .preamble p:nth-of-type(3)::before {
+    top: 250px;
+    left: -10%;
+  }
+  .intro .preamble p:nth-of-type(3)::after {
+    top: 270px;
+    left: -15%;
+  }
+
+  .main.supporting h3 {
+    width: 67%;
+  }
+  .main.supporting div.explanation h3::before {
+    top: 0px;
+    right: -75%;
+  }
+  .main.supporting div.explanation h3::after {
+    top: 30px;
+    right: -60%;
+  }
+  .main.supporting div.explanation p:first-of-type::before {
+    top: 40px;
+    right: -23%;
+  }
+  .main.supporting div.explanation p:first-of-type::after {
+    top: 100px;
+    right: -40%;
+  }
+  .main.supporting div.explanation p:nth-of-type(2)::before {
+    top: 20px;
+    right: -37%;
+  }
+  .main.supporting div.explanation p:nth-of-type(2)::after {
+    top: 100px;
+    right: -30%;
+  }
+  .main.supporting div.participation h3::before {
+    top: 0px;
+    left: -200px;
+  }
+  .main.supporting div.participation h3::after {
+    top: 30px;
+    left: -100px;
+  }
+  .main.supporting div.participation p:first-of-type::before {
+    top: 40px;
+    left: -23%;
+  }
+  .main.supporting div.participation p:first-of-type::after {
+    top: 100px;
+    left: -40%;
+  }
+  .main.supporting div.participation p:nth-of-type(2)::before {
+    top: 20px;
+    left: -37%;
+  }
+  .main.supporting div.participation p:nth-of-type(2)::after {
+    top: 100px;
+    left: -30%;
+  }
+  .main.supporting div.participation p:nth-of-type(3)::before {
+    top: 0px;
+    left: -10%;
+  }
+  .main.supporting div.participation p:nth-of-type(3)::after {
+    top: 100px;
+    left: -20%;
+  }
+  .main.supporting div.benefits h3::before {
+    top: 0px;
+    right: -100%;
+  }
+  .main.supporting div.benefits h3::after {
+    top: 30px;
+    right: -85%;
+  }
+  .main.supporting div.benefits p:first-of-type::before {
+    top: 40px;
+    right: -30%;
+  }
+  .main.supporting div.benefits p:first-of-type::after {
+    top: 100px;
+    right: -20%;
+  }
+  .main.supporting div.requirements h3::before {
+    top: 0px;
+    left: -200px;
+  }
+  .main.supporting div.requirements h3::after {
+    top: 30px;
+    left: -100px;
+  }
+  .main.supporting div.requirements p:first-of-type::before {
+    top: 40px;
+    left: -23%;
+  }
+  .main.supporting div.requirements p:first-of-type::after {
+    top: 100px;
+    left: -40%;
+  }
+  .main.supporting div.requirements p:nth-of-type(2)::before {
+    top: 20px;
+    left: -37%;
+  }
+  .main.supporting div.requirements p:nth-of-type(2)::after {
+    top: 100px;
+    left: -30%;
+  }
+  .main.supporting div.requirements p:nth-of-type(3)::before {
+    top: 0px;
+    left: -10%;
+  }
+  .main.supporting div.requirements p:nth-of-type(3)::after {
+    top: 100px;
+    left: -25%;
+  }
+  .main.supporting div.requirements p:nth-of-type(4)::before {
+    top: 0px;
+    left: -29%;
+  }
+  .main.supporting div.requirements p:nth-of-type(4)::after {
+    top: 100px;
+    left: -20%;
+  }
+  .main.supporting div.requirements p:nth-of-type(5)::before {
+    top: 0px;
+    left: -40%;
+  }
+  .main.supporting div.requirements p:nth-of-type(5)::after {
+    top: 100px;
+    left: -20%;
+  }
+
+  aside.sidebar .design-selection h3::before {
+    top: -230px;
+    left: 0px;
+  }
+  aside.sidebar .design-selection h3::after {
+    top: -100px;
+    left: -10px;
+  }
+  aside.sidebar .design-archives h3::before {
+    top: 100px;
+    left: 48%;
+  }
+  aside.sidebar .design-archives h3::after {
+    top: 150px;
+    left: 70%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(1)::before {
+    top: 50%;
+    left: 30%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(1)::after {
+    top: 53%;
+    left: 83%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(2)::before {
+    top: 55%;
+    left: 70%;
+  }
+  aside.sidebar .design-archives li:nth-of-type(2)::after {
+    top: 60%;
+    left: 63%;
+  }
+  aside.sidebar .zen-resources h3::before {
+    top: 30px;
+    left: 83%;
+  }
+  aside.sidebar .zen-resources h3::after {
+    top: 100px;
+    left: 70%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(1)::before {
+    top: 65%;
+    left: 30%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(1)::after {
+    top: 68%;
+    left: 60%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(2)::before {
+    top: 70%;
+    left: 75%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(2)::after {
+    top: 75%;
+    left: 34%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(3)::before {
+    top: 78%;
+    left: 48%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(3)::after {
+    top: 80%;
+    left: 32%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(4)::before {
+    top: 85%;
+    left: 75%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(4)::after {
+    top: 88%;
+    left: 45%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(5)::before {
+    top: 90%;
+    left: 60%;
+  }
+  aside.sidebar .zen-resources li:nth-of-type(5)::after {
+    top: 95%;
+    left: 30%;
+  }
+}
+@keyframes star-1 {
+  0% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #b13df5;
+  }
+  30% {
+    transform: scale(120%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 13px #b13df5;
+  }
+  60% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #b13df5;
+  }
+  61% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #b13df5;
+  }
+  80% {
+    transform: scale(100%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 10px #b13df5;
+  }
+  100% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #b13df5;
+  }
+}
+@keyframes star-2 {
+  0% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffec70;
+  }
+  25% {
+    transform: scale(70%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #ffec70;
+  }
+  50% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffec70;
+  }
+  75% {
+    transform: scale(70%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #ffec70;
+  }
+  100% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #ffec70;
+  }
+}
+@keyframes star-3 {
+  0% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #b13df5;
+  }
+  20% {
+    transform: scale(50%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 5px #b13df5;
+  }
+  30% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #b13df5;
+  }
+  40% {
+    transform: scale(70%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #b13df5;
+  }
+  50% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #ffffff;
+  }
+  58% {
+    transform: scale(60%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffffff;
+  }
+  66% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #ffffff;
+  }
+  74% {
+    transform: scale(60%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffffff;
+  }
+  82% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 3px #ffffff;
+  }
+  90% {
+    transform: scale(60%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffffff;
+  }
+  98% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffffff;
+  }
+  100% {
+    transform: scale(0%) rotate(50deg) skewX(20deg);
+    box-shadow: 0px 0px 0px #ffffff;
+  }
+}
+@keyframes moon {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  62% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(1%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+header::before {
+  animation-name: moon;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.07, 0.36, 0.59, 1.07);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+@media only screen and (min-width: 980px) {
+  header::before {
+    animation-name: moon;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.07, 0.36, 0.59, 1.07);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+}
+@media only screen and (prefers-reduced-motion: no-preference) {
+  .intro header h1::before {
+    animation-name: star-1;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro header h1::after {
+    animation-name: star-2;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro header h2::before, .intro header h2::after {
+    animation-name: star-3;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro .summary p::before {
+    animation-name: star-2;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro .summary p::after {
+    animation-name: star-1;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro .preamble h3::before {
+    animation-name: star-2;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro .preamble h3::after {
+    animation-name: star-2;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro .preamble p::before {
+    animation-name: star-1;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .intro .preamble p::after {
+    animation-name: star-3;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+
+  .main.supporting h3::before {
+    animation-name: star-1;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .main.supporting h3::after {
+    animation-name: star-1;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .main.supporting p:nth-of-type(even)::before {
+    animation-name: star-2;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .main.supporting p:nth-of-type(even)::after {
+    animation-name: star-2;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .main.supporting p:nth-of-type(odd)::before {
+    animation-name: star-3;
+    animation-delay: 0.3s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  .main.supporting p:nth-of-type(odd)::after {
+    animation-name: star-1;
+    animation-delay: 0.3s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+
+  aside.sidebar h3::before {
+    animation-name: star-3;
+    animation-delay: 0.3s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  aside.sidebar h3::after {
+    animation-name: star-1;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  aside.sidebar li:nth-of-type(even)::before {
+    animation-name: star-2;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  aside.sidebar li:nth-of-type(even)::after {
+    animation-name: star-2;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  aside.sidebar li:nth-of-type(odd)::before {
+    animation-name: star-3;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  aside.sidebar li:nth-of-type(odd)::after {
+    animation-name: star-1;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,400&display=swap');
+
+
+$primary-font: 'Arsenal',
+sans-serif;
+$secondary-font: 'EB Garamond',
+serif;
+
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: $primary-font;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-family: $secondary-font;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+h2, h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1em 0;
+}
+
+p {
+    line-height: 2em;
+    text-align: center;
+    font-size: 2rem;
+        @media only screen and (min-width:$width-L) {
+            font-size: 1.6rem;
+            text-align: left;
+        }
+}
+
+p + p {
+    padding-top: 15px;
+}
+
+button {
+    font-size: 1.4rem;
+    font-family: $secondary-font;
+}
+
+
+/*
+Specific styles
+*/
+
+.intro {
+    h1 {
+        font-size: 2.5em;  
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    div.summary {
+        font-family: $secondary-font;
+        font-style: italic;
+		p {
+			padding-top: 0px;
+            text-align: center;
+            font-size: 1.6rem;
+		}
+	}
+    
+    @media only screen and (min-width: $width-M) {
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    @media only screen and (min-width: $width-L) {
+        h1 {
+            font-size: 3.4em;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+aside.sidebar {
+    font-size: 2rem;
+    text-align: center;
+
+    @media only screen and (min-width: $width-L) {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    li {
+        line-height: 2em;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 2rem;
+}
